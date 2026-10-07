@@ -1,0 +1,12 @@
+:root { --ink: #1c2421; --green: #14463a; --bg: #f3f6f4; --gold: #e8b931; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; }
+header { background: var(--green); color: #fff; padding: 20px 16px; border-bottom: 4px solid var(--gold); }
+header h1 { margin: 0; font-size: 1.5rem; }
+.layout { display: grid; gap: 24px; padding: 16px; max-width: 1200px; margin: 0 auto; }
+/* Mobile: uma coluna. Desktop: cardápio + pedido lateral fixo. */
+@media (min-width: 900px) {
+  .layout { grid-template-columns: 1fr 340px; align-items: start; }
+  .layout .side { position: sticky; top: 16px; }
+}
+.status { color: #55635d; }

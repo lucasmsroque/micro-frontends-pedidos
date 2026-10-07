@@ -1,0 +1,19 @@
+{
+  "name": "micro-frontends-pedidos",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n menu,order,container -c green,yellow,cyan \"npm run dev -w apps/menu\" \"npm run dev -w apps/order\" \"npm run dev -w apps/container\"",
+    "dev:menu": "npm run dev -w apps/menu",
+    "dev:order": "npm run dev -w apps/order",
+    "dev:container": "npm run dev -w apps/container"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "overrides": {
+    "enhanced-resolve": "5.17.1"
+  }
+}
